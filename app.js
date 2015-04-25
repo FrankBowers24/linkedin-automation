@@ -17,24 +17,17 @@ build();
 //
 //
 //
-var showTopics = function() {
-	console.log("in showTopics");
-	driver.findElements(webdriver.By.className('endorse-item-name-text'))
-    .then(function (elements) {
-		console.log("matched elements");
-		// for (var i = 0; i < elements.length; i++) {
-		// 	console.log('topic: ', elements[i].getInnerHtml());
-		// }
-    console.log('innerHtml', elements[0].getInnerHtml()); 
-		//console.log('constructor: ', elements[0].constructor);
-	  for (var key in elements[0]) {
-	    if (typeof elements[0][key] === 'function') {
-	      console.log("method: ", key);
-	    } else {
-	    	console.log("non-method", key);
-	    }
-	  }
-	});
+var showTopics = function () {
+  console.log("in showTopics");
+  driver.findElements(webdriver.By.className('endorse-item-name-text'))
+    .then(function (skills) {
+
+      for (var i = 0; i < skills.length; i++) {
+        console.log(skills[i].getText().then(function (skill) {
+          console.log(skill)
+        }));
+      }
+    });
 };
 //
 driver.get('http://www.linkedin.com');

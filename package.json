@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "line-reader": "^0.2.4",
+    "prompt": "^0.2.14",
     "selenium-webdriver": "^2.45.1"
   }
 }
