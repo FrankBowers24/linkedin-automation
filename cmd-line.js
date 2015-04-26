@@ -1,11 +1,18 @@
 //  THIS IS A PHANTOMJS SCRIPT
 var system = require('system');
-var args = system.args;
+var fs = require('fs');
 
-if (args.length === 1) {
-  console.log('Try to pass some arguments when invoking this script!');
-} else {
-  args.forEach(function(arg, i) {
-    console.log(i + ': ' + arg);
-  });
-}
+system.stdout.writeLine('Email address: ');
+var email = system.stdin.readLine();
+system.stdout.writeLine('Password: ');
+var password = system.stdin.readLine();
+
+console.log("Your username is: ", email);
+console.log("Your password is: ", password);
+
+console.log('*****************');
+
+var contacts = fs.read('Contacts.csv');
+console.log('contacts: ', contacts);
+
+phantom.exit();
