@@ -51,11 +51,11 @@ rl.on('line', function (email) {
   	console.log("");
     child = exec("phantomjs echo-args.js " + email + " " + password,
       function (error, stdout, stderr) {
-        console.log('stdout: ' + stdout);
-        console.log('stderr: ' + stderr);
-        if (error !== null) {
-          console.log('exec error: ' + error);
-        }
+        console.log(stdout);
+        // console.log('stderr: ' + stderr);
+        // if (error !== null) {
+        //   console.log('exec error: ' + error);
+        // }
       });
   });
 });
